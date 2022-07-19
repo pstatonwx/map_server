@@ -74,16 +74,17 @@
         .latlng(e.latlng)
         .run((err, res) => {
           if (err) return;
-          alert(
-            "Copied " +
-            e.latlng["lat"] +
-            "," +
-            e.latlng["lng"] +
-            " to clipboard! 🎉" + '\n' + "Paste in the box below!"
-          );
+          // alert(
+          //   "Copied " +
+          //   e.latlng["lat"] +
+          //   "," +
+          //   e.latlng["lng"] +
+          //   " to clipboard! 🎉" + '\n' + "Paste in the box below!"
+          // );
           L.marker(res.latlng)
             .addTo(map)
-            .bindPopup(res.address.Match_addr)
+            .bindPopup("Copied lat/lon to clipboard!\nPaste in the box below!")
+            // .bindPopup(res.address.Match_addr)
             .openPopup();
         });
       copyToClipboard(e.latlng["lat"] + "," + e.latlng["lng"]);
