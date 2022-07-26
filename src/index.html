@@ -74,13 +74,6 @@
         .latlng(e.latlng)
         .run((err, res) => {
           if (err) return;
-          // alert(
-          //   "Copied " +
-          //   e.latlng["lat"] +
-          //   "," +
-          //   e.latlng["lng"] +
-          //   " to clipboard! 🎉" + '\n' + "Paste in the box below!"
-          // );
           L.marker(res.latlng)
             .addTo(map)
             .bindPopup("Copied lat/lon to clipboard!\nPaste in the box below!")
